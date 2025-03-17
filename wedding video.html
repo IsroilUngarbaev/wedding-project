@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullScreen Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        video {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="fullscreen-video" autoplay loop>
+        <source src="marriage video-2.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+    <script>
+        const video = document.getElementById("fullscreen-video");
+        document.addEventListener("DOMContentLoaded", () => {
+            video.play().catch(error => console.log("Автовоспроизведение заблокировано:", error));
+        });
+        video.addEventListener("click", () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    </script>
+
+</body>
+</html>
