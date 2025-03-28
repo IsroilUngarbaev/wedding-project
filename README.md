@@ -1,2 +1,2 @@
 # wedding-project
-My first project as GITHUB
+wedding for you
